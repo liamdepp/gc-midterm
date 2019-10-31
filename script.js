@@ -14,17 +14,17 @@ class FoodItem {
 let foodItems = [];
 
 //creating new instance of food item
-let testFood1 = new FoodItem("pizza", "main", "pizza desc", 12.0);
+let testFood1 = new FoodItem("Pizza", "main", "pizza desc", 12.0);
 foodItems.push(testFood1);
-let testFood2 = new FoodItem("burger", "main", "burger desc", 10.0);
+let testFood2 = new FoodItem("Burger", "main", "burger desc", 10.0);
 foodItems.push(testFood2);
 let testFood3 = new FoodItem("Hot Dog", "main", "Hot Dog desc", 5.0);
 foodItems.push(testFood3);
 let testFood4 = new FoodItem("Milk Shake", "main", "Hot Dog desc", 5.0);
 foodItems.push(testFood4);
-let testFood5 = new FoodItem("taco", "main", "Hot Dog desc", 5.0);
+let testFood5 = new FoodItem("Taco", "main", "Hot Dog desc", 5.0);
 foodItems.push(testFood5);
-let testFood6 = new FoodItem("fried Chicken", "main", "Hot Dog desc", 5.0);
+let testFood6 = new FoodItem("Fried Chicken", "main", "Hot Dog desc", 5.0);
 foodItems.push(testFood6);
 let testFood7 = new FoodItem("Cheese Streak", "main", "Hot Dog desc", 5.0);
 foodItems.push(testFood7);
@@ -51,18 +51,26 @@ function addToShoppingCart(event) {
     cart.push(foodItems[i]);
     console.log(cart);
     display();
+    getTotal();
     // document.querySelector("#cart").innerText =cart.name
   }
 }
 
-//subtotal
-let subTotal = 0;
-let tax = 0;
-let total = 0;
-for (const foodItem of cart) {
-  subtotal += foodItem.price;
-  tax = foodItem.price * 0.6;
-  total = subtotal + tax;
+function getTotal() {
+  let subTotal = 0;
+  let tax = 0;
+  let total = 0;
+  for (const foodItem of cart) {
+    subTotal += foodItem.price;
+    tax = subTotal * 0.06;
+    total = subTotal + tax;
+  }
+  console.log(subTotal.toFixed(2));
+  console.log(tax.toFixed(2));
+  console.log(total.toFixed(2));
+  document.getElementById('subTotal').innerText = `Subtotal: $${subTotal.toFixed(2)}`;
+  document.getElementById('tax').innerText = `Tax: $${tax.toFixed(2)}`;
+  document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
 }
 
 //food item buttons/cards container class
@@ -86,25 +94,22 @@ foodItems.forEach((foodItem, index) => {
   foodItemButton.append(foodDescription);
 
   let foodPrice = document.createElement("div");
-  foodPrice.innerText = `Price: ${foodItem.price}`;
+  foodPrice.innerText = `Price: $${foodItem.price.toFixed(2)}`;
   foodItemButton.append(foodPrice);
   //
   foodItemButton.setAttribute("index", index);
   allFoodItems.append(foodItemButton);
 });
-// function addToCart(e) {
-//   if(e.target.classList.contains("foodButton"){
-//     const i =
-//   })
-// }
+
 function display() {
   document.querySelector("#cart").innerText = "";
   // cart.forEach((item, index) => {
   for (const item of cart) {
     const newItem = document.createElement("div");
     newItem.classList.add("cartItem");
-    newItem.innerText = `Item: ${item.name} Price: ${item.price}`;
+    newItem.innerText = `${item.name}: $${item.price.toFixed(2)}`;
 
     document.querySelector("#cart").appendChild(newItem);
+
   }
 }

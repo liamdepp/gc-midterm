@@ -17,16 +17,17 @@ header h1 {
   margin-right: auto;
 }
 
-header a {
+#cartIcon {
   color: whitesmoke;
   font-size: 1.52em;
   align-self: center;
   padding: 10px;
   background-color: #dadfe1;
   border-radius: 5px;
-  box-shadow: 0 0 2px grey;
+  box-shadow: 0 0 2px #dadfe1;
   color: #f89406;
-  text-shadow: 0 0 10px #dadfe1;
+  text-shadow: 0 0 10px whitesmoke;
+  cursor: pointer;
 }
 
 
@@ -57,4 +58,32 @@ header a {
 .foodButton>div{
     pointer-events: none;
 }
+.cartName {
+  border-top: 2px solid black;
+}
+.button {
+  text-decoration: none;
+  background-color: #f89406;
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #dadfe1;
+  width: 75px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  
+}
+#buttons {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid black;
 
+}
+h2 {
+  /*margin: 0;*/
+  align-self: center;
+}
+#subTotal {
+  /* border-top: 2px solid black; */
+}
