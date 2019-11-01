@@ -34,7 +34,7 @@ header h1 {
 .itemsPage {
   display: flex;
   justify-content: space-around;
-  flex-direc>i* row;
+  flex-direction: row;
   width: 90%;
   padding:10px;
   flex-wrap: wrap;
@@ -76,14 +76,18 @@ header h1 {
 }
 #buttons {
   display: flex;
-  justify-content: space-between;
-  border-top: 2px solid black;
+  
 
 }
 h2 {
   /*margin: 0;*/
   align-self: center;
 }
-#subTotal {
-  /* border-top: 2px solid black; */
+#payWith {
+  border-top: 2px solid black;
+  padding: 5px 0px 0px 0px;
+}
+.cartItem {
+  padding: 5px;
+  border-left: 2px solid black;
 }
