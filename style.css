@@ -2,6 +2,7 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   padding: 0px 10px;
 }
+
 header {
   background-color: #f89406;
   color: whitesmoke;
@@ -12,6 +13,7 @@ header {
   text-shadow: 0 0 5px grey;
   border-radius: 5px;
 }
+
 header h1 {
   font-size: 1.5em;
   margin-right: auto;
@@ -29,7 +31,6 @@ header h1 {
   text-shadow: 0 0 10px whitesmoke;
   cursor: pointer;
 }
-
 
 .itemsPage {
   display: flex;
@@ -55,12 +56,15 @@ header h1 {
   margin-left: 5px;
   cursor: pointer;
 }
+
 .foodButton>div{
     pointer-events: none;
 }
+
 .cartName {
   border-top: 2px solid black;
 }
+
 .button {
   text-decoration: none;
   background-color: #f89406;
@@ -71,23 +75,103 @@ header h1 {
   width: 75px;
   text-align: center;
   margin-top: auto;
-  margin-bottom: auto;
-  
 }
+
 #buttons {
   display: flex;
-  
-
+  width: 50%;
+  position: relative;
+  justify-content: space-between;
+  cursor: pointer;
 }
+
 h2 {
-  /*margin: 0;*/
   align-self: center;
 }
+
 #payWith {
   border-top: 2px solid black;
   padding: 5px 0px 0px 0px;
 }
+
+
 .cartItem {
   padding: 5px;
   border-left: 2px solid black;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+i {
+  padding-left: 10px;
+  color: #f89406;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 568px){
+.itemsPage {
+width: 100%;
+}
+
+
+
+}
+@media only screen and (min-width: 980px){
+  .itemsPage {
+    /* margin: 15px; */
+  }
+  .foodButton {
+    margin: 10px;
+  }
+}
+@media only screen and (min-width: 1071px) {
+  .foodButton {
+    margin: 20px;
+  }
+}
+@media only screen and (min-width: 1191px) {
+  .foodButton {
+    margin: 30px;
+  }
+}
+
+@media only screen and (min-width: 1310px) {
+  .foodButton {
+    margin: 45px;
+  }
 }

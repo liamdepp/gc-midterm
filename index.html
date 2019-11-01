@@ -27,10 +27,37 @@
     <h3 id="total">Total:</h3>
     <h2 id="payWith">Pay With:</h2>
     <section id="buttons">
-      
-      <a href="" class="button">Cash</a>
-      <a href="" class="button">Card</a>
+      <a class="button cashButton" id='cash'>Cash</a>
+      <a class="button cardButton" id='card'>Card</a>
     </section>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+    </div>
+
+  
+    <div id="myModal2" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form>
+          <h2>Pay with Card</h2>
+          <h3 class ="amountDue">Total: $0.00</h3>
+          <label
+            >Card Number<input type="text" placeholder="xxxx-xxxx-xxxx-xxxx"
+          /></label>
+          <label>CCV<input type="text" placeholder="xxx"/></label>
+          <input type="button" value="Pay" class="button" />
+          
+        </form>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
