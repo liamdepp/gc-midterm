@@ -200,8 +200,9 @@ document.querySelector("#cart").addEventListener("click", removeFromCart);
 
 function removeFromCart(event) {
   if (event.target.classList.contains("fa-times")) {
-    cart.splice(event.target.index, 1);
-    console.log(cart);
+    let index = event.target.parentNode.getAttribute("index");
+    console.log(index);
+    cart.splice(index, 1);
     display();
     displayReceipt();
     getTotal();
