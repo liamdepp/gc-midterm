@@ -20,16 +20,20 @@ header h1 {
 }
 
 #cartIcon {
-  color: whitesmoke;
   font-size: 1.52em;
   align-self: center;
   padding: 10px;
-  background-color: #dadfe1;
+  background-color: #f89406;
   border-radius: 5px;
-  box-shadow: 0 0 2px #dadfe1;
-  color: #f89406;
-  text-shadow: 0 0 10px whitesmoke;
+  box-shadow: 0 0 0px #dadfe1;
+  color: white;
+  text-shadow: 0 0 2px #dadfe1;
   cursor: pointer;
+  text-align: center;
+}
+.fa-shopping-cart {
+  color: whitesmoke;
+  text-align: center;
 }
 
 .itemsPage {
@@ -42,8 +46,8 @@ header h1 {
 }
 
 .foodButton {
-  background-color: #dadfe1;
-  color: black;
+  background-color: #4b77be;
+  color: white;
   border-radius: 5px;
   box-shadow: 0 0 2px grey;
   width: 150px;

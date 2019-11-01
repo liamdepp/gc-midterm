@@ -14,25 +14,25 @@ class FoodItem {
 let foodItems = [];
 
 //creating new instance of food item
-let testFood1 = new FoodItem("Pizza", "main", "pizza desc", 12.0);
+let testFood1 = new FoodItem("Pizza", "main", "desc", 12.0);
 foodItems.push(testFood1);
-let testFood2 = new FoodItem("Burger", "main", "burger desc", 10.0);
+let testFood2 = new FoodItem("Burger", "main", "desc", 10.0);
 foodItems.push(testFood2);
-let testFood3 = new FoodItem("Hot Dog", "main", "Hot Dog desc", 5.0);
+let testFood3 = new FoodItem("Hot Dog", "main", "desc", 5.0);
 foodItems.push(testFood3);
-let testFood4 = new FoodItem("Milk Shake", "main", "Hot Dog desc", 5.0);
+let testFood4 = new FoodItem("Milk Shake", "main", "desc", 5.0);
 foodItems.push(testFood4);
-let testFood5 = new FoodItem("Taco", "main", "Hot Dog desc", 5.0);
+let testFood5 = new FoodItem("Taco", "main", "desc", 5.0);
 foodItems.push(testFood5);
-let testFood6 = new FoodItem("Fried Chicken", "main", "Hot Dog desc", 5.0);
+let testFood6 = new FoodItem("Fried Chicken", "main", "desc", 5.0);
 foodItems.push(testFood6);
-let testFood7 = new FoodItem("Cheese Streak", "main", "Hot Dog desc", 5.0);
+let testFood7 = new FoodItem("Cheese Streak", "main", "desc", 5.0);
 foodItems.push(testFood7);
-let testFood8 = new FoodItem("Pepsi", "main", "Hot Dog desc", 5.0);
+let testFood8 = new FoodItem("Pepsi", "main", "desc", 5.0);
 foodItems.push(testFood8);
-let testFood9 = new FoodItem("Nachos", "main", "Hot Dog desc", 5.0);
+let testFood9 = new FoodItem("Nachos", "main", "desc", 5.0);
 foodItems.push(testFood9);
-let testFood10 = new FoodItem("Corn on the Cob", "main", "Hot Dog desc", 5.0);
+let testFood10 = new FoodItem("Corn on the Cob", "main", "desc", 5.0);
 foodItems.push(testFood10);
 
 //cart array
@@ -178,10 +178,11 @@ window.onclick = function(event) {
 // Delete Function
 document.querySelector("#cart").addEventListener("click", removeFromCart);
 
-function removeFromCart(e) {
-  if(e.target.classList.contains("fas")) {
-    const index = e.target.getAttribute("index");
-    cart.splice(index, 1);
+
+function removeFromCart(event) {
+  if (event.target.classList.contains("fa-times")) {
+    cart.splice(event.target.index, 1);
+    display();
+    getTotal();
   }
 }
-
