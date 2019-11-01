@@ -19,24 +19,42 @@
       
     </main>
     <h1 class="cartName">Your Cart:</h1>
+    <div class="salesInfo">
     <section id="cart">
-      
     </section>
     <h3 id="subTotal">Subtotal:</h3>
     <h3 id="tax">Tax:</h3>
     <h3 id="total">Total:</h3>
+    </div>
     <h2 id="payWith">Pay With:</h2>
     <section id="buttons">
       <a class="button cashButton" id='cash'>Cash</a>
       <a class="button cardButton" id='card'>Card</a>
     </section>
 
-    <!-- The Modal -->
+    <!-- cash payment modal -->
     <div id="myModal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
+        <form class="paymentForm" min="total">
+          <h2>Pay with Cash</h2>
+          <h3 class="amountDue">Total: $0.00</h3>
+          <label
+            >Cash Amount: $<input
+              id="cashReceived"
+              type="number"
+              min="0.01"
+              step="0.01"
+              max="2500"
+              value="0.00"
+              required
+          /></label>
+          <button class="button">
+            Pay
+          </button>
+          <h3 id="changeDue">Change:</h3>
+          <div class="receipt"></div>
+        </form>
       </div>
     </div>
 
@@ -45,7 +63,7 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <form>
+        <form class="paymentForm">
           <h2>Pay with Card</h2>
           <h3 class ="amountDue">Total: $0.00</h3>
           <label
@@ -54,8 +72,9 @@
           <label
             >Card Number<input type="text" placeholder="xxxx-xxxx-xxxx-xxxx"
           /></label>
-          <label>CCV<input type="text" placeholder="xxx"/></label>
-          <input type="button" value="Pay" class="button" />
+          <label>CCV<input type="text" placeholder="xxx"/>
+          <button class="button">Pay</button>
+          <div class="receipt"></div>
           
         </form>
       </div>

@@ -1,4 +1,5 @@
 console.log("working...");
+//current ver
 
 //class constructor for food items
 class FoodItem {
@@ -68,12 +69,30 @@ function getTotal() {
   console.log(subTotal.toFixed(2));
   console.log(tax.toFixed(2));
   console.log(total.toFixed(2));
-  document.getElementById('subTotal').innerText = `Subtotal: $${subTotal.toFixed(2)}`;
-  document.getElementById('tax').innerText = `Tax: $${tax.toFixed(2)}`;
-  document.getElementById('total').innerText = `Total: $${total.toFixed(2)}`;
+  document.getElementById(
+    "subTotal"
+  ).innerText = `Subtotal: $${subTotal.toFixed(2)}`;
+  document.getElementById("tax").innerText = `Tax: $${tax.toFixed(2)}`;
+  document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
   document.querySelector(".amountDue").innerText = `Total: $${total.toFixed(
     2
   )}`;
+  document
+    .querySelector("#cashReceived")
+    .setAttribute("min", `${total.toFixed(2)}`);
+  document
+    .querySelector(".paymentForm")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+      let cashReceived = document.querySelector("#cashReceived").value;
+      change = (Number(cashReceived) - Number(total)).toFixed(2);
+      document.querySelector("#changeDue").innerText = `Change: $${change}`;
+      //
+
+      // let receipt = (document.querySelector(".receipt").innerText = total);
+      displayReceipt();
+      display();
+    });
 }
 
 //food item buttons/cards container class
@@ -109,21 +128,16 @@ function display() {
   cart.forEach((item, index) => {
     const newItem = document.createElement("div");
     const deleteIcon = document.createElement("span");
-
     deleteIcon.innerHTML = `<i class="fas fa-times"></i>`;
     newItem.classList.add("cartItem");
-    newItem.setAttribute("index", index);
+    // newItem.setAttribute("index", index);
     deleteIcon.setAttribute("index", index);
     newItem.innerText = `${item.name}: $${item.price.toFixed(2)}`;
-
     newItem.appendChild(deleteIcon);
     document.querySelector("#cart").appendChild(newItem);
-
     console.log(cart);
   });
 
-    
-  
   /*for (const item of cart) {
     const newItem = document.createElement("div");
     const deleteIcon = document.createElement("span");
@@ -151,9 +165,15 @@ var span2 = document.getElementsByClassName("close")[1];
 
 // When the user clicks on the button, open the modal
 CashBtn.onclick = function() {
+  let payForm = document.querySelector(".paymentForm");
+  payForm.reset();
+  document.querySelector(".amountDue").value = "";
   modal.style.display = "block";
 };
 CardBtn.onclick = function() {
+  let payForm = document.querySelector(".paymentForm");
+  payForm.reset();
+  document.querySelector(".amountDue").value = "";
   modal2.style.display = "block";
 };
 
@@ -178,11 +198,39 @@ window.onclick = function(event) {
 // Delete Function
 document.querySelector("#cart").addEventListener("click", removeFromCart);
 
-
 function removeFromCart(event) {
   if (event.target.classList.contains("fa-times")) {
     cart.splice(event.target.index, 1);
+    console.log(cart);
     display();
+    displayReceipt();
     getTotal();
   }
 }
+
+function displayReceipt() {
+  // document.querySelector(".receipt").innerHTML = "";
+  // getTotal();
+  document.querySelector(".receipt").innerHTML = document.querySelector(
+    ".salesInfo"
+  ).innerHTML;
+}
+//   cart.forEach((item, index) => {
+//     const newItem = document.createElement("div");
+//     newItem.classList.add("cartItem");
+//     newItem.innerText = `${item.name}: $${item.price.toFixed(2)}`;
+//     document.querySelector(".receipt").appendChild(newItem);
+//   });
+//   let subTotalReceipt = document.createElement("div");
+//   subTotalReceipt.innerHTML = subTotal;
+//   console.log(subTotal);
+//   document.querySelector(".receipt").appendChild(subTotalReceipt);
+
+// document.getElementById(
+//   "subTotalReceipt"
+// ).innerText = `Subtotal: $${subTotal.toFixed(2)}`;
+// document.getElementById("taxReceipt").innerText = `Tax: $${tax.toFixed(2)}`;
+// document.getElementById("totalReceipt").innerText = `Total: $${total.toFixed(
+//   2
+// )}`;
+// }

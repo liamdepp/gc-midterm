@@ -41,7 +41,7 @@ header h1 {
   justify-content: space-around;
   flex-direction: row;
   width: 90%;
-  padding:10px;
+  padding: 10px;
   flex-wrap: wrap;
 }
 
@@ -56,13 +56,13 @@ header h1 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: 10px ;
+  margin-bottom: 10px;
   margin-left: 5px;
   cursor: pointer;
 }
 
-.foodButton>div{
-    pointer-events: none;
+.foodButton > div {
+  pointer-events: none;
 }
 
 .cartName {
@@ -97,7 +97,6 @@ h2 {
   border-top: 2px solid black;
   padding: 5px 0px 0px 0px;
 }
-
 
 .cartItem {
   padding: 5px;
@@ -147,15 +146,12 @@ i {
   cursor: pointer;
 }
 
-@media only screen and (min-width: 568px){
-.itemsPage {
-width: 100%;
+@media only screen and (min-width: 568px) {
+  .itemsPage {
+    width: 100%;
+  }
 }
-
-
-
-}
-@media only screen and (min-width: 980px){
+@media only screen and (min-width: 980px) {
   .itemsPage {
     /* margin: 15px; */
   }
@@ -178,4 +174,8 @@ width: 100%;
   .foodButton {
     margin: 45px;
   }
+}
+
+.receipt i {
+  display: none;
 }
