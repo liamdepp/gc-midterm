@@ -112,7 +112,6 @@ function display() {
 
     deleteIcon.innerHTML = `<i class="fas fa-times"></i>`;
     newItem.classList.add("cartItem");
-    newItem.setAttribute("index", index);
     deleteIcon.setAttribute("index", index);
     newItem.innerText = `${item.name}: $${item.price.toFixed(2)}`;
 
@@ -122,6 +121,7 @@ function display() {
     console.log(cart);
   });
 
+  
     
   
   /*for (const item of cart) {
@@ -181,7 +181,9 @@ document.querySelector("#cart").addEventListener("click", removeFromCart);
 
 function removeFromCart(event) {
   if (event.target.classList.contains("fa-times")) {
-    cart.splice(event.target.index, 1);
+    let index = event.target.parentNode.getAttribute("index");
+    console.log(index);
+    cart.splice(index, 1);
     display();
     getTotal();
   }
