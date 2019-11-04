@@ -84,6 +84,8 @@ header h1 {
   width: 75px;
   text-align: center;
   margin-top: auto;
+  cursor: pointer;
+  border-style: none;
 }
 
 #buttons {
@@ -184,3 +186,5 @@ input {
 #receiptHeader {
   padding-top: 15px;
 }
+
+
