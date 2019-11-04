@@ -49,13 +49,15 @@
               value="0.00"
               required
           /></label>
-          <button class="button">
+          <button class="button" id='cashPayButton'>
             Pay
           </button>
           <h3 id='receiptHeader'></h3>
           <div class="receipt"></div>
           <h3 id='cashReceivedReceipt'></h3>
           <h3 id="changeDue"></h3>
+          <input type="button" value="Cancel" class='button' id='switchCash' onClick="document.location.reload(true)">
+
         </form>
       </div>
     </div>
@@ -69,16 +71,16 @@
           <h2>Pay with Card</h2>
           <h3 class ="amountDueCard">Total: $0.00</h3>
           <label
-            >Cardholder Name<input type="text" placeholder="Name"
+            >Cardholder Name<input type="text" placeholder="Name" required
           />
           <label
-            >Card Number<input type="text" placeholder="xxxx-xxxx-xxxx-xxxx"
+            >Card Number<input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required
           /></label>
-          <label>CCV<input type="text" placeholder="xxx"/>
-          <button class="button">Pay</button>
+          <label>CCV<input type="text" placeholder="xxx" required/>
+          <button class="button" id='cardPayButton'>Pay</button>
           <h3 id='receiptHeaderCard'></h3>
           <div class="receiptCard"></div>
-          
+          <input type="button" value="Cancel" class='button' id='switchCard' onClick="document.location.reload(true)">
         </form>
       </div>
     </div>
