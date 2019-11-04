@@ -10,7 +10,7 @@ header {
   display: flex;
   justify-content: center;
   text-align: center;
-  text-shadow: 0 0 5px grey;
+  text-shadow: 0 0 5px #e87e04;
   border-radius: 5px;
 }
 
@@ -25,9 +25,9 @@ header h1 {
   padding: 10px;
   background-color: #f89406;
   border-radius: 5px;
-  box-shadow: 0 0 0px #dadfe1;
+  box-shadow: 0 0 0px #e87e04;
   color: white;
-  text-shadow: 0 0 2px #dadfe1;
+  text-shadow: 0 0 2px #e87e04;
   cursor: pointer;
   text-align: center;
 }
@@ -37,12 +37,23 @@ header h1 {
 }
 
 .itemsPage {
-  display: flex;
+  /* display: flex;
   justify-content: space-around;
   flex-direction: row;
   width: 90%;
   padding: 10px;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding: 10px;
+  justify-items: center;
+  
+}
+@media screen and (min-width: 1026px) {
+  .itemsPage {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
 }
 
 .foodButton {
@@ -144,37 +155,14 @@ i {
   padding-left: 10px;
   color: #f89406;
   cursor: pointer;
+  transition: 0.2s;
 }
 
-@media only screen and (min-width: 568px) {
-  .itemsPage {
-    width: 100%;
-  }
-}
-@media only screen and (min-width: 980px) {
-  .itemsPage {
-    /* margin: 15px; */
-  }
-  .foodButton {
-    margin: 10px;
-  }
-}
-@media only screen and (min-width: 1071px) {
-  .foodButton {
-    margin: 20px;
-  }
-}
-@media only screen and (min-width: 1191px) {
-  .foodButton {
-    margin: 30px;
-  }
+i:hover {
+  color: red;
+  transition: 0.2s;
 }
 
-@media only screen and (min-width: 1310px) {
-  .foodButton {
-    margin: 45px;
-  }
-}
 
 .receipt i {
   display: none;
