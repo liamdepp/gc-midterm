@@ -179,3 +179,22 @@ i {
 .receipt i {
   display: none;
 }
+
+.receiptCard i {
+  display: none;
+}
+
+label {
+  font-size: 18px;
+  font-weight: bolder;
+  margin-right: 5px;
+}
+
+input {
+  padding: 5px;
+}
+
+#receiptHeader {
+  border-top: 0.5px solid black;
+  padding-top: 15px;
+}

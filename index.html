@@ -52,8 +52,10 @@
           <button class="button">
             Pay
           </button>
-          <h3 id="changeDue">Change:</h3>
+          <h3 id='receiptHeader'></h3>
           <div class="receipt"></div>
+          <h3 id='cashReceivedReceipt'></h3>
+          <h3 id="changeDue"></h3>
         </form>
       </div>
     </div>
@@ -63,9 +65,9 @@
       <!-- Modal content -->
       <div class="modal-content">
         <span class="close">&times;</span>
-        <form class="paymentForm">
+        <form class="paymentFormCard">
           <h2>Pay with Card</h2>
-          <h3 class ="amountDue">Total: $0.00</h3>
+          <h3 class ="amountDueCard">Total: $0.00</h3>
           <label
             >Cardholder Name<input type="text" placeholder="Name"
           />
@@ -74,7 +76,8 @@
           /></label>
           <label>CCV<input type="text" placeholder="xxx"/>
           <button class="button">Pay</button>
-          <div class="receipt"></div>
+          <h3 id='receiptHeaderCard'></h3>
+          <div class="receiptCard"></div>
           
         </form>
       </div>

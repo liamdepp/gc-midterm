@@ -53,6 +53,7 @@ function addToShoppingCart(event) {
     console.log(cart);
     display();
     getTotal();
+    getTotalCard();
     // document.querySelector("#cart").innerText =cart.name
   }
 }
@@ -87,10 +88,37 @@ function getTotal() {
       let cashReceived = document.querySelector("#cashReceived").value;
       change = (Number(cashReceived) - Number(total)).toFixed(2);
       document.querySelector("#changeDue").innerText = `Change: $${change}`;
+
       //
 
       // let receipt = (document.querySelector(".receipt").innerText = total);
       displayReceipt();
+      display();
+    });
+}
+
+function getTotalCard() {
+  let subTotal = 0;
+  let tax = 0;
+  let total = 0;
+  for (const foodItem of cart) {
+    subTotal += foodItem.price;
+    tax = subTotal * 0.06;
+    total = subTotal + tax;
+  }
+  document.getElementById(
+    "subTotal"
+  ).innerText = `Subtotal: $${subTotal.toFixed(2)}`;
+  document.getElementById("tax").innerText = `Tax: $${tax.toFixed(2)}`;
+  document.getElementById("total").innerText = `Total: $${total.toFixed(2)}`;
+  document.querySelector(".amountDueCard").innerText = `Total: $${total.toFixed(
+    2
+  )}`;
+  document
+    .querySelector(".paymentFormCard")
+    .addEventListener("submit", function(event) {
+      event.preventDefault();
+      displayReceiptCard();
       display();
     });
 }
@@ -206,32 +234,27 @@ function removeFromCart(event) {
     display();
     displayReceipt();
     getTotal();
+    getTotalCard();
   }
 }
 
 function displayReceipt() {
   // document.querySelector(".receipt").innerHTML = "";
   // getTotal();
+  document.querySelector("#receiptHeader").innerText = "Items Purchased:";
+  document.querySelector(
+    "#cashReceivedReceipt"
+  ).innerText = `Amount Tendered: $${
+    document.querySelector("#cashReceived").value
+  }`;
   document.querySelector(".receipt").innerHTML = document.querySelector(
     ".salesInfo"
   ).innerHTML;
 }
-//   cart.forEach((item, index) => {
-//     const newItem = document.createElement("div");
-//     newItem.classList.add("cartItem");
-//     newItem.innerText = `${item.name}: $${item.price.toFixed(2)}`;
-//     document.querySelector(".receipt").appendChild(newItem);
-//   });
-//   let subTotalReceipt = document.createElement("div");
-//   subTotalReceipt.innerHTML = subTotal;
-//   console.log(subTotal);
-//   document.querySelector(".receipt").appendChild(subTotalReceipt);
 
-// document.getElementById(
-//   "subTotalReceipt"
-// ).innerText = `Subtotal: $${subTotal.toFixed(2)}`;
-// document.getElementById("taxReceipt").innerText = `Tax: $${tax.toFixed(2)}`;
-// document.getElementById("totalReceipt").innerText = `Total: $${total.toFixed(
-//   2
-// )}`;
-// }
+function displayReceiptCard() {
+  document.querySelector("#receiptHeaderCard").innerText = "Items Purchased:";
+  document.querySelector(".receiptCard").innerHTML = document.querySelector(
+    ".salesInfo"
+  ).innerHTML;
+}
