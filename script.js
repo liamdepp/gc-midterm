@@ -15,25 +15,25 @@ class FoodItem {
 let foodItems = [];
 
 //creating new instance of food item
-let testFood1 = new FoodItem("Pizza", "main", "desc", 12.0);
+let testFood1 = new FoodItem("Pizza", "Entree", "Cheese or pep", 12.0);
 foodItems.push(testFood1);
-let testFood2 = new FoodItem("Burger", "main", "desc", 10.0);
+let testFood2 = new FoodItem("Burger", "Entree", "Beef puck", 10.0);
 foodItems.push(testFood2);
-let testFood3 = new FoodItem("Hot Dog", "main", "desc", 5.0);
+let testFood3 = new FoodItem("Hot Dog", "Entree", '"Meat" tube', 5.50);
 foodItems.push(testFood3);
-let testFood4 = new FoodItem("Milk Shake", "main", "desc", 5.0);
+let testFood4 = new FoodItem("Milk Shake", "Drink", "Chocolate rain ", 4.50);
 foodItems.push(testFood4);
-let testFood5 = new FoodItem("Taco", "main", "desc", 5.0);
+let testFood5 = new FoodItem("Taco", "Entree", "Tuesday only", 5.0);
 foodItems.push(testFood5);
-let testFood6 = new FoodItem("Fried Chicken", "main", "desc", 5.0);
+let testFood6 = new FoodItem("Fried Chicken", "Entree", "Kentucky fried", 12.0);
 foodItems.push(testFood6);
-let testFood7 = new FoodItem("Cheese Streak", "main", "desc", 5.0);
+let testFood7 = new FoodItem("Cheese Steak", "Entree", "Just like Philly", 8.0);
 foodItems.push(testFood7);
-let testFood8 = new FoodItem("Pepsi", "main", "desc", 5.0);
+let testFood8 = new FoodItem("Pepsi", "Drink", "Is pepsi okay?", 1.50);
 foodItems.push(testFood8);
-let testFood9 = new FoodItem("Nachos", "main", "desc", 5.0);
+let testFood9 = new FoodItem("Nachos", "Side", "Cheese chips", 4.75);
 foodItems.push(testFood9);
-let testFood10 = new FoodItem("Corn on the Cob", "main", "desc", 5.0);
+let testFood10 = new FoodItem("Corn on the Cob", "Side", "Why?", 2.75);
 foodItems.push(testFood10);
 
 //cart array
