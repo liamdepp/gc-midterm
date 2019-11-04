@@ -252,3 +252,11 @@ payButtonCard.addEventListener("click", changeButton2);
 function changeButton2() {
   document.querySelector("#switchCard").setAttribute("value", "Done");
 }
+
+function addHyphen(element) {
+  let ele = document.getElementById("cardNumber");
+  ele = ele.value.split("-").join(""); // Remove dash (-) if mistakenly entered.
+
+  let finalVal = ele.match(/.{1,4}/g).join("-");
+  document.getElementById(element.id).value = finalVal;
+}

@@ -74,9 +74,9 @@
             >Cardholder Name<input type="text" placeholder="Name" required
           />
           <label
-            >Card Number<input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required
+            >Card Number<input type="text" id='cardNumber'onkeyup="addHyphen(this)" placeholder="xxxx-xxxx-xxxx-xxxx" pattern=".{19,19}" maxlength='19' required
           /></label>
-          <label>CCV<input type="text" placeholder="xxx" required/>
+          <label>CCV<input type="text" placeholder="xxx" minlength='3' maxlength='3' required/>
           <button class="button" id='cardPayButton'>Pay</button>
           <h3 id='receiptHeaderCard'></h3>
           <div class="receiptCard"></div>
