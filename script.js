@@ -54,7 +54,6 @@ function addToShoppingCart(event) {
     display();
     getTotal();
     getTotalCard();
-    // document.querySelector("#cart").innerText =cart.name
   }
 }
 
@@ -88,10 +87,7 @@ function getTotal() {
       let cashReceived = document.querySelector("#cashReceived").value;
       change = (Number(cashReceived) - Number(total)).toFixed(2);
       document.querySelector("#changeDue").innerText = `Change: $${change}`;
-
       //
-
-      // let receipt = (document.querySelector(".receipt").innerText = total);
       displayReceipt();
       display();
     });
@@ -165,18 +161,6 @@ function display() {
     document.querySelector("#cart").appendChild(newItem);
     console.log(cart);
   });
-
-  /*for (const item of cart) {
-    const newItem = document.createElement("div");
-    const deleteIcon = document.createElement("span");
-    deleteIcon.innerHTML = '<i class="fas fa-times"></i>';
-    newItem.classList.add("cartItem");
-    newItem.setAttribute("index", cart[]);
-    newItem.innerText = `${item.name}: $${item.price.toFixed(2)}`;
-    newItem.appendChild(deleteIcon);
-    document.querySelector("#cart").appendChild(newItem);
-    console.log(cart);
-  }*/
 }
 
 // Get the modal
@@ -239,8 +223,6 @@ function removeFromCart(event) {
 }
 
 function displayReceipt() {
-  // document.querySelector(".receipt").innerHTML = "";
-  // getTotal();
   document.querySelector("#receiptHeader").innerText = "Items Purchased:";
   document.querySelector(
     "#cashReceivedReceipt"
@@ -257,4 +239,16 @@ function displayReceiptCard() {
   document.querySelector(".receiptCard").innerHTML = document.querySelector(
     ".salesInfo"
   ).innerHTML;
+}
+
+let payButtonCash = document.querySelector("#cashPayButton");
+payButtonCash.addEventListener("click", changeButton);
+function changeButton() {
+  document.querySelector("#switchCash").setAttribute("value", "Done");
+}
+
+let payButtonCard = document.querySelector("#cardPayButton");
+payButtonCard.addEventListener("click", changeButton2);
+function changeButton2() {
+  document.querySelector("#switchCard").setAttribute("value", "Done");
 }
